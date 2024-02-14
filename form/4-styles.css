@@ -687,6 +687,11 @@
   }
 
   input[type="text"],
+  input[type="email"] {
+    padding-right: 3rem;
+  }
+
+  input[type="text"],
   input[type="email"],
   textarea {
     position: relative;
@@ -697,11 +702,6 @@
     background-color: var(--color-white);
     box-shadow: none;
     outline: 0;
-  }
-
-  input[type="text"],
-  input[type="email"] {
-    padding-right: 3rem;
   }
 
   input[type="text"]:focus,
