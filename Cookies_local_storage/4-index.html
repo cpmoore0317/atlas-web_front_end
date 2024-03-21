@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <div id="form">
+      <h2 id="h2">Login to the website</h2>
+      <input type="text" id="firstname" placeholder="Firstname" />
+      <input type="text" id="email" placeholder="Email" />
+      <button onclick="setCookies()">Log me in</button>
+    </div>
+    <script type="application/javascript">
+      function setCookies() {
+        Cookies.set("firstname", document.getElementById("firstname").value, {
+          expires: 10,
+        });
+        Cookies.set("email", document.getElementById("email").value, {
+          expires: 10,
+        });
+        showWelcomeMessageOrForm();
+      }
+      function showCookies() {
+        const p = document.createElement("p");
+        const firstName = Cookies.get("firstname");
+        const email = Cookies.get("email");
+        p.textContent = `Email: ${email} - Firstname: ${firstName}`;
+        document.body.append(p);
+      }
+      function showForm() {
+        document.getElementById("form").style.display = "block";
+      }
+      function hideForm() {
+        document.getElementById("form").style.display = "none";
+      }
+      function deleteCookiesAndShowForm() {
+        document.getElementById("h1").remove();
+        Cookies.remove("firstname");
+        Cookies.remove("email");
+        showForm();
+      }
+      function showWelcomeMessageOrForm() {
+        if (!Cookies.get("firstname") || !Cookies.get("email")) showForm();
+        else {
+          hideForm();
+          const h1 = document.createElement("h1");
+          h1.textContent = "Welcome: " + Cookies.get("firstname");
+          h1.setAttribute("id", "h1");
+          const a = document.createElement("a");
+          a.textContent = "logout";
+          a.setAttribute("onclick", "deleteCookiesAndShowForm()");
+          a.style.fontWeight = "normal";
+          a.style.fontStyle = "italic";
+          a.style.marginLeft = "10px";
+          a.style.cursor = "pointer";
+          h1.append(a);
+          document.body.append(h1);
+        }
+      }
+    </script>
+  </body>
+</html>
