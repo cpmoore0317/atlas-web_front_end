@@ -12,7 +12,7 @@ function outer() {
       alert(globalVariable + " " + course + exclamation);
     }
     inception();
-    inner();
   }
-  outer();
+  inner();
 }
+outer();
