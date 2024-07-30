@@ -1,6 +1,6 @@
 # Atlas Web Front-End
 
-![Project Screenshot](link-to-screenshot.png)
+![Project Screenshot](front_end.png)
 
 ## About the Developer
 
