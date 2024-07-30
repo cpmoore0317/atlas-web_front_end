@@ -36,3 +36,7 @@ The Atlas Web Front-End project started with a focus on creating a responsive an
 * Developer tools for debugging and optimization
 * Flexible layouts with Flexbox
 * Form handling and styling with SCSS
+
+### Challenges Encountered
+
+One of the main challenges was ensuring the web interface was fully responsive and accessible to all users. Debugging complex JavaScript functions and optimizing performance also posed significant challenges. However, these challenges were invaluable in enhancing the project's robustness and usability.
